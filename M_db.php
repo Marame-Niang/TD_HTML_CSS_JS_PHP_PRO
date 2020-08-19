@@ -5,7 +5,7 @@
         $host = 'localhost';
         $user = 'root';
         $password = '';
-        $dbname = 'banquepeupleproc';
+        $dbname = 'BanquePeuplePROC';
         $dsn = "mysql:host=$host;dbname=$dbname";
 
         try {
