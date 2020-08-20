@@ -35,16 +35,16 @@
     function addSimpleEntreprise($numero,$id_entreprise,$rib,$solde,$dateOuve,$fraisOuv,$remuneration,$typeCompte){
 
         $sql = "INSERT INTO compte (numero, id_entreprise, rib, solde, dateOuverture, fraisOuverture, remuneration, typeCompte)
-             VALUES ('$numero','$id_entreprise',$rib,$solde,'$dateOuve',$fraisOuv,$remuneration,$typeCompte)";
+             VALUES ('$numero',$id_entreprise,$rib,$solde,'$dateOuve',$fraisOuv,$remuneration,$typeCompte)";
         $db = getConnexion();
 
         return $db->exec($sql);
     }
 
-    function addBloqueEntreprise($numero,$id_entreprise,$rib,$solde,$dateOuve,$fraisOuv,$remuneration,$date_debut,$date_fin,$typeCompte){
+    function addBloqueEntreprise($numero, $id_entreprise,$rib,$solde,$dateOuve,$fraisOuv,$remuneration,$date_debut,$date_fin,$typeCompte){
 
         $sql = "INSERT INTO compte (numero, id_entreprise, rib, solde, dateOuverture, fraisOuverture, remuneration, dateDebut,dateFin,typeCompte)
-             VALUES ('$numero','$id_entreprise',$rib,$solde,'$dateOuve',$fraisOuv,$remuneration,'$date_debut','$date_fin',$typeCompte)";
+             VALUES ('$numero', $id_entreprise,$rib,$solde,'$dateOuve',$fraisOuv,$remuneration,'$date_debut','$date_fin',$typeCompte)";
         $db = getConnexion();
 
         return $db->exec($sql);

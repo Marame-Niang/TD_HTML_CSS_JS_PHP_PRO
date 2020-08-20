@@ -1,7 +1,7 @@
 <?php
-
     require_once 'M_client.php';
     require_once 'M_compte.php';
+    require_once 'M_db.php';
 
     extract($_POST);
 
@@ -49,13 +49,16 @@
                 $remuneration = 10000;
                 $typeCompte = 1;
                 $compte = addSimpleEntreprise($numero,$id_entreprise,$rib,$solde,$dateOuve,$fraisOuv,$remuneration,$typeCompte);
+                var_dump($compte);
+                die();
                 header("location:V_accueil.php?ok=$compte");
+                // var_dump($compte);
+                // die();
             }else{
                 $fraisOuv = 20000;
                 $remuneration = 7500;
                 $typeCompte = 3;
                 $compte = addBloqueEntreprise($numero,$id_entreprise,$rib,$solde,$dateOuve,$fraisOuv,$remuneration,$date_debut,$date_fin,$typeCompte);
-
             }
         }
     }

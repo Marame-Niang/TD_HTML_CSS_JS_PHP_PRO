@@ -5,7 +5,8 @@
             $sql = "INSERT INTO personne VALUES('$matricule','$cni','$nom','$prenom','$sexe',
             '$datenaiss','$tel','$adresse','$email',null,null,null,null,null,null)";
             $db = getConnexion();
-            var_dump($sql);
+            // var_dump($sql);
+            // die();
             return $db->exec($sql);
     }
 
@@ -23,8 +24,11 @@
         ,'$email_entreprise',null,null,$budget_entreprise,'$adr_entreprise')";
         $db = getConnexion();
         var_dump($sql);
-        return $db->exec($sql);
-    }
+        $db->exec($sql);
+        return $id_entreprise = $db->lastInsertId();
+        
+        }
+    
 
     function searchClientbyMat($mat){
         $sql = "SELECT * FROM personne WHERE cin LIKE '%".$mat."%'";

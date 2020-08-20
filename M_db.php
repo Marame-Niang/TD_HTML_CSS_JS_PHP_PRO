@@ -7,9 +7,9 @@
         $password = '';
         $dbname = 'BanquePeuplePROC';
         $dsn = "mysql:host=$host;dbname=$dbname";
+        $mydb = new PDO($dsn,$user,$password);
 
         try {
-            $mydb = new PDO($dsn,$user,$password);
             $mydb->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $ex) {
             die('Erreur : '.$ex->getMessage());
